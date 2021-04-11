@@ -28,3 +28,7 @@ button:active {
 .fade-leave-to {
   opacity: 0;
 }
+
+h1 {
+  @apply font-bold tracking-wide text-3xl;
+}
