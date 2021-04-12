@@ -1,20 +1,51 @@
 <template>
   <main>
-    <div class="flex flex-col items-center pt-8 min-h-screen">
-      <div class="min-w-full px-6 mb-4">
-        <img src="plus_icon.svg" alt="plus icon" />
+    <div class="flex flex-col items-center pt-8 min-h-screen bg-gray-100">
+      <div class="min-w-full px-3 pb-3 border-b border-gray-200">
+        <img src="plus_icon.svg" alt="add new" class="w-8" />
         <div class="flex flex-row justify-between min-h-full">
           <h1>My sensors</h1>
           <img src="user.svg" alt="user icon" />
         </div>
       </div>
-      <div class="min-h-full min-w-full bg-white">
-        <p>LIST</p>
-      </div>
+      <transition-group name="fade">
+        <div v-for="(sensor, i) in exampleData" v-bind:key="i" class="w-full">
+          <Sensor v-bind:sensor="sensor" />
+        </div>
+      </transition-group>
     </div>
   </main>
 </template>
 
-<script></script>
+<script>
+import Sensor from "../components/Sensor";
+
+export default {
+  components: {
+    Sensor,
+  },
+  data: function () {
+    return {
+      exampleData: [
+        {
+          title: "INT - Openlab TUKE",
+          description: "All measured air quality indicators are OK",
+          color: "#2ECC71",
+        },
+        {
+          title: "INT - Canteen TUKE",
+          description: "High PM2.5 density, smoke detected...",
+          color: "#95a5a6",
+        },
+        {
+          title: "EXT - TUKE",
+          description: "Unusual high smog value detected",
+          color: "#e67e22",
+        },
+      ],
+    };
+  },
+};
+</script>
 
 <style scoped></style>

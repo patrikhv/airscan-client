@@ -14,7 +14,7 @@
           Sign in
         </button>
         <button
-          class="h-10 mt-3 w-3/4 text-sm rounded-md flex items-center justify-center text-gray-500 bg-white"
+          class="h-10 mt-3 w-3/4 text-sm rounded-md flex items-center justify-center text-gray-600 bg-white"
         >
           <img src="google_logo.svg" alt="Google logo" class="w-6 mr-3" />
           Sign in with Google
