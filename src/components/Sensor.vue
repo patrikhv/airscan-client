@@ -8,7 +8,7 @@
     ></div>
     <div>
       <h1 class="text-lg font-semibold">{{ sensor.title }}</h1>
-      <h2 class="text-sm">{{ sensor.description }}</h2>
+      <h2 class="text-sm font-light text-gray-600">{{ sensor.description }}</h2>
     </div>
     <img
       src="arrow_right.svg"
