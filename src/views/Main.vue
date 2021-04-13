@@ -1,7 +1,9 @@
 <template>
   <main>
-    <div class="flex flex-col items-center pt-8 min-h-screen bg-gray-100">
-      <div class="min-w-full px-3 pb-3 border-b border-gray-200">
+    <div class="flex flex-col items-center min-h-screen bg-white">
+      <div
+        class="min-w-full px-3 pb-3 border-b pt-8 border-gray-200 bg-gray-100"
+      >
         <img src="plus_icon.svg" alt="add new" class="w-8" />
         <div class="flex flex-row justify-between min-h-full">
           <h1>My sensors</h1>

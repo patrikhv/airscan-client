@@ -8,7 +8,11 @@ module.exports = {
     extend: {
       colors: {
         primary: "#2ECC71",
+        secondary: "#137A40",
       },
+      backgroundImage: () => ({
+        waves: "url('/waves.svg')",
+      }),
     },
   },
   variants: {
