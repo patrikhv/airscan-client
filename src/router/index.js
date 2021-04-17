@@ -9,6 +9,11 @@ const routes = [
     component: Sensors,
   },
   {
+    path: "/sensor/:id",
+    name: "Sensor",
+    component: () => import("../views/SensorView.vue"),
+  },
+  {
     path: "/login",
     name: "Login",
     component: () => import("../views/Login.vue"),

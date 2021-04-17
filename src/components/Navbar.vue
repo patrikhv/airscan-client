@@ -1,6 +1,6 @@
 <template>
   <div
-    class="absolute bottom-0 w-screen h-16 flex justify-evenly items-center text-sm bg-gray-100 text-gray-500"
+    class="fixed bottom-0 w-screen h-16 flex justify-evenly items-center text-xs bg-gray-100 text-gray-500"
   >
     <router-link to="/">Home</router-link>
     <router-link to="/sensors">Public sensors</router-link>

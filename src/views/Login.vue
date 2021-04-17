@@ -10,7 +10,10 @@
       </p>
       <LoginInput />
       <div class="flex flex-col items-center mt-12 pb-4">
-        <button class="w-full h-12 rounded-xl text-white bg-primary">
+        <button
+          v-on:click="login"
+          class="w-full h-12 rounded-xl text-white bg-primary"
+        >
           Sign in
         </button>
         <button
@@ -36,6 +39,11 @@ import LoginInput from "../components/LoginInput";
 export default {
   components: {
     LoginInput,
+  },
+  methods: {
+    login: function () {
+      this.$router.push("/");
+    },
   },
 };
 </script>
