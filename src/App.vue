@@ -10,7 +10,7 @@
 <script>
 import Navbar from "./components/Navbar";
 
-const navbarAllowedPaths = [""];
+const navbarAllowedPaths = ["", "sensor"];
 
 export default {
   components: { Navbar },

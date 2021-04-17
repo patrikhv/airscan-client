@@ -4,10 +4,9 @@
       <div
         class="min-w-full px-3 pb-3 border-b pt-8 border-gray-200 bg-gray-100"
       >
-        <img src="plus_icon.svg" alt="add new" class="w-8" />
-        <div class="flex flex-row justify-between min-h-full">
-          <h1>My sensors</h1>
-          <img src="user.svg" alt="user icon" />
+        <div class="flex flex-row justify-between items-center min-h-full">
+          <h1 class="">My sensors</h1>
+          <img src="plus_icon.svg" alt="add new" class="w-7" />
         </div>
       </div>
       <transition-group name="fade">
@@ -20,7 +19,7 @@
 </template>
 
 <script>
-import Sensor from "../components/Sensor";
+import Sensor from "../components/SensorList";
 
 export default {
   components: {
@@ -36,7 +35,7 @@ export default {
         },
         {
           title: "INT - Canteen TUKE",
-          description: "High PM2.5 density, smoke detected...",
+          description: "High PM2.5 density, smoke detected",
           color: "#95a5a6",
         },
         {
