@@ -59,6 +59,7 @@ export default {
     },
     logout() {
       auth.logout();
+      this.message = "";
     },
     privateMessage() {
       const url = `${API_URL}/api/private/`;
