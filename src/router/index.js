@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Sensors from "../views/Main.vue";
+import { routeGuard } from "../auth";
 import NotFound from "../views/NotFound.vue";
 
 const routes = [
@@ -7,26 +8,18 @@ const routes = [
     path: "/",
     name: "Sensors",
     component: Sensors,
+    beforeEnter: routeGuard,
   },
   {
     path: "/sensor/:id",
     name: "Sensor",
     component: () => import("../views/SensorView.vue"),
   },
+
   {
-    path: "/login",
-    name: "Login",
-    component: () => import("../views/Login.vue"),
-  },
-  {
-    path: "/register",
-    name: "Register",
-    component: () => import("../views/Register.vue"),
-  },
-  {
-    path: "/login-test",
-    name: "Login-test",
-    component: () => import("../views/Login-test.vue"),
+    path: "/settings",
+    name: "Settings",
+    component: () => import("../views/Settings.vue"),
   },
 
   {

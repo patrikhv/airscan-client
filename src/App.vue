@@ -10,7 +10,7 @@
 <script>
 import Navbar from "./components/Navbar";
 
-const navbarAllowedPaths = ["", "sensor"];
+const navbarAllowedPaths = ["", "sensor", "settings"];
 
 export default {
   components: { Navbar },
@@ -19,6 +19,7 @@ export default {
       showNavbar: false,
     };
   },
+  mounted() {},
   watch: {
     $route(to) {
       console.log(to.path);
