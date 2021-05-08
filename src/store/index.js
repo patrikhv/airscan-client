@@ -1,28 +1,12 @@
 import { createStore } from "vuex";
-import auth0Vuex from "auth0-vuex";
+import session from "./modules/session.js";
 
 const store = createStore({
-  state() {
-    return {
-      token: null,
-      loading: true,
-      isAuthenticated: false,
-      user: {},
-      popupOpen: false,
-      error: null,
-    };
-  },
-  mutations: {
-    updateToken(state, token) {
-      state.token = token;
-    },
-    changeLoadingState(state, bool) {
-      state.loading = bool;
-    },
-  },
+  state: {},
+  mutations: {},
   actions: {},
   modules: {
-    auth0: auth0Vuex,
+    session,
   },
 });
 

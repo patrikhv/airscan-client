@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import Navbar from "./components/Navbar";
 
 const navbarAllowedPaths = ["", "sensor", "settings"];
@@ -19,7 +20,9 @@ export default {
       showNavbar: false,
     };
   },
-  mounted() {},
+  methods: {
+    ...mapGetters(["authenticated"]),
+  },
   watch: {
     $route(to) {
       console.log(to.path);
