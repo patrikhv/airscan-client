@@ -1,5 +1,4 @@
 import auth0 from "auth0-js";
-import router from "../router";
 
 export default class Authenticator {
   constructor() {
@@ -10,17 +9,16 @@ export default class Authenticator {
       redirectUri: "http://localhost:8080/auth",
       audience: process.env.VUE_APP_AUDIENCE,
       responseType: "token id_token",
-      scope: "openid",
+      scope:
+        "openid read:current_user create:current_user_metadata update:current_user_metadata delete:current_user_metadata",
     });
   }
   handleAuthentication() {
     return new Promise((resolve, reject) => {
       this.auth0.parseHash((err, authResult) => {
         if (err) return reject(err);
-
         resolve(authResult);
       });
-      router.push("/");
     });
   }
   login() {
