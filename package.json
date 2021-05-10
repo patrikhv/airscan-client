@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "NODE_ENV=production vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -12,6 +12,7 @@
     "@j-t-mcc/vue3-chartjs": "^1.1.1",
     "@tailwindcss/forms": "^0.3.2",
     "@tailwindcss/postcss7-compat": "^2.0.2",
+    "@vue-leaflet/vue-leaflet": "^0.6.0",
     "auth0-js": "^9.16.0",
     "auth0-vuex": "0.0.1",
     "autoprefixer": "^9",
@@ -31,7 +32,6 @@
     "vuex-auth0": "^1.0.0"
   },
   "devDependencies": {
-    "@vue-leaflet/vue-leaflet": "^0.6.0",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-plugin-router": "~4.5.0",

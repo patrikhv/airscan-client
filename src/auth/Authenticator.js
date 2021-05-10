@@ -6,7 +6,7 @@ export default class Authenticator {
     this.auth0 = new auth0.WebAuth({
       domain: process.env.VUE_APP_DOMAIN,
       clientID: process.env.VUE_APP_CLIENTID,
-      redirectUri: "http://localhost:8080/auth",
+      redirectUri: process.env.VUE_APP_REDIRECTURI,
       audience: process.env.VUE_APP_AUDIENCE,
       responseType: "token id_token",
       scope:
