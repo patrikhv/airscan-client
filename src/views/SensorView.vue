@@ -42,7 +42,7 @@ export default {
     ...mapGetters(["getPublicSensors"]),
     async getSensorEntries() {
       const { data } = await axios.get(
-        `http://iot2-influx-writer.azurewebsites.net/query/all/?time=-1d&sensor_id=${this.sensor.sensor_id}&period=1d`
+        `https://iot2-influx-writer.azurewebsites.net/query/all/?time=-1d&sensor_id=${this.sensor.sensor_id}&period=1d`
       );
       this.sensorEntries = data;
       console.log(data);
