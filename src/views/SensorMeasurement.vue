@@ -51,7 +51,7 @@ export default {
   methods: {
     async getGraphData(monthly) {
       const { data } = await axios.get(
-        `http://iot2-influx-writer.azurewebsites.net/query?time=${
+        `https://iot2-influx-writer.azurewebsites.net/query?time=${
           monthly ? "-30d" : "-1d"
         }&sensor_id=${this.$route.params.id}&period=${
           monthly ? "1d" : "1h"
