@@ -6,11 +6,6 @@
       >
         <div class="flex flex-row justify-between items-center min-h-full">
           <h1 class="">{{ sensor.sensor_name || sensor.sensor_id }}</h1>
-          <button
-            class="px-2 py-1 rounded-lg border text-xs border-primary text-primary"
-          >
-            Unfollow
-          </button>
         </div>
       </div>
 
@@ -50,6 +45,7 @@ export default {
         `http://iot2-influx-writer.azurewebsites.net/query/all/?time=-1d&sensor_id=${this.sensor.sensor_id}&period=1d`
       );
       this.sensorEntries = data;
+      console.log(data);
     },
     filterSensorEntries(measurement) {
       return this.sensorEntries
@@ -64,6 +60,7 @@ export default {
     sensor() {
       const id = this.$route.params.id;
       const data = this.getPublicSensors();
+      console.log(data);
       console.log(data.find((i) => i.sensor_id == id));
       return data.find((i) => i.sensor_id == id);
     },

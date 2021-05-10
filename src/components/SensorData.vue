@@ -28,7 +28,11 @@ export default {
   props: ["measurement", "values"],
   computed: {
     link() {
-      console.log(this.$route.params.id);
+      console.log(
+        `${this.$route.path}/detail?${qs.stringify({
+          measurement: this.measurement,
+        })}`
+      );
       return `${this.$route.path}/detail?${qs.stringify({
         measurement: this.measurement,
       })}`;

@@ -12,7 +12,14 @@ import { mapActions } from "vuex";
 
 import Navbar from "./components/Navbar";
 
-const navbarAllowedPaths = ["", "sensor", "settings", "sensors", "public"];
+const navbarAllowedPaths = [
+  "",
+  "sensor",
+  "settings",
+  "sensors",
+  "public",
+  "notifications",
+];
 
 export default {
   components: { Navbar },

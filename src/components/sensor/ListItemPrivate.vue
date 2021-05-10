@@ -3,7 +3,7 @@
     <div
       class="cursor-pointer w-full flex items-center p-2 border-b border-gray-300 border-opacity-30 bg-white"
     >
-      <div class="w-11 h-11 rounded-full mr-2 bg-primary"></div>
+      <div class="w-11 h-11 rounded-full mr-2 bg-secondary"></div>
       <div class="w-9/12">
         <h1 class="text-lg font-semibold">
           {{ sensor.sensor_name || sensor.sensor_id }}

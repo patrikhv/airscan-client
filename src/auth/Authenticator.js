@@ -10,13 +10,14 @@ export default class Authenticator {
       audience: process.env.VUE_APP_AUDIENCE,
       responseType: "token id_token",
       scope:
-        "openid read:current_user create:current_user_metadata update:current_user_metadata delete:current_user_metadata",
+        "openid email profile read:current_user create:current_user_metadata update:current_user_metadata delete:current_user_metadata",
     });
   }
   handleAuthentication() {
     return new Promise((resolve, reject) => {
       this.auth0.parseHash((err, authResult) => {
         if (err) return reject(err);
+        console.log(authResult);
         resolve(authResult);
       });
     });

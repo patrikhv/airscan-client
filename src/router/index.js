@@ -45,6 +45,11 @@ const routes = [
     component: () => import("../views/Signin.vue"),
   },
   {
+    path: "/notifications",
+    name: "Notifications",
+    component: () => import("../views/Notifications.vue"),
+  },
+  {
     path: "/:pathMatch(.*)*",
     name: "NotFound",
     component: NotFound,

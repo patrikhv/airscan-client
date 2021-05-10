@@ -9,6 +9,7 @@ const state = {
   idToken: localStorage.getItem("id_token"),
   expiresAt: localStorage.getItem("expires_at"),
   user: localStorage.getItem("user"),
+  profile: JSON.parse(localStorage.getItem("profile")),
 };
 
 const getters = {
@@ -24,6 +25,9 @@ const getters = {
   user(state) {
     return state.user;
   },
+  profile(state) {
+    return state.profile;
+  },
 };
 
 const mutations = {
@@ -33,25 +37,28 @@ const mutations = {
     state.idToken = authData.idToken;
     state.expiresAt = authData.expiresIn * 1000 + new Date().getTime();
     state.user = authData.user;
-    console.log(authData.user);
+    state.profile = authData.profile;
+    console.log(authData.profile);
 
     localStorage.setItem("access_token", state.accessToken);
     localStorage.setItem("id_token", state.idToken);
     localStorage.setItem("expires_at", state.expiresAt);
     localStorage.setItem("user", state.user);
+    localStorage.setItem("profile", JSON.stringify(state.profile));
   },
 
   logout(state) {
     state.authenticated = false;
     state.accessToken = null;
     state.idToken = false;
-    state.userId = null;
     state.user = null;
+    state.profile = null;
 
     localStorage.removeItem("access_token");
     localStorage.removeItem("id_token");
     localStorage.removeItem("expires_at");
     localStorage.removeItem("user");
+    localStorage.removeItem("profile");
   },
 };
 
@@ -75,6 +82,7 @@ const actions = {
           function (err, user) {
             if (err) console.log(err);
             authResult.user = user.sub;
+            authResult.profile = authResult.idTokenPayload;
             commit("authenticated", authResult);
             router.push("/");
           }

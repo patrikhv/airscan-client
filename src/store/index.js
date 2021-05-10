@@ -6,15 +6,22 @@ import session from "./modules/session.js";
 const store = createStore({
   state: {
     publicSensors: null,
+    notifications: null,
   },
   mutations: {
     setPublicSensors(state, data) {
       state.publicSensors = data;
     },
+    setNotifications(state, data) {
+      state.notifications = data;
+    },
   },
   getters: {
-    getPublicSensors: (state) => {
+    getPublicSensors(state) {
       return state.publicSensors;
+    },
+    getNotifications(state) {
+      return state.notifications;
     },
   },
   actions: {
@@ -31,7 +38,14 @@ const store = createStore({
         data: qsData,
       });
       context.commit("setPublicSensors", data);
-      console.log(data);
+    },
+    async updateNotifications(context) {
+      const { data } = await axios({
+        method: "get",
+        url:
+          "https://iot2-notification-service.azurewebsites.net/notifications",
+      });
+      context.commit("setNotifications", data);
     },
   },
   modules: {

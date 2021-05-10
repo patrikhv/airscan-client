@@ -4,7 +4,13 @@
       <div
         class="min-w-full px-3 pb-3 border-b pt-8 border-gray-200 bg-gray-100"
       >
-        <div class="flex flex-row justify-between items-center min-h-full">
+        <div class="flex flex-row items-center min-h-full">
+          <img
+            src="/arrow_left.svg"
+            alt="go back"
+            @click="$router.go(-1)"
+            class="w-7 mr-2 cursor-pointer"
+          />
           <h1 class="text-2xl">
             ID: {{ $route.params.id }} |
             {{ $route.query.measurement }}
@@ -16,13 +22,13 @@
           :class="monthlyActive ? `bg-gray-300 opacity-50` : `bg-primary`"
           @click="monthlyActive = false"
         >
-          Last hour
+          Last 24 hours
         </button>
         <button
           :class="monthlyActive ? `bg-primary` : `bg-gray-300 opacity-50`"
           @click="monthlyActive = true"
         >
-          Last month
+          Last 30 days
         </button>
       </div>
       <div v-if="!loading" class="w-full">
