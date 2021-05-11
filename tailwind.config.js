@@ -6,6 +6,9 @@ module.exports = {
       sans: ["Open Sans", "sans-sarif"],
     },
     extend: {
+      zIndex: {
+        1000: "1000",
+      },
       colors: {
         primary: "#2ECC71",
         secondary: "#137A40",
