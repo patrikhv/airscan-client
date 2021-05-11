@@ -5,8 +5,8 @@
     <div :class="priorityClass + ` priority`"></div>
     <div class="flex-grow">
       <div class="flex justify-between items-center">
-        <h1 class="text-lg font-semibold">
-          <img src="/sensor.svg" alt="" class="w-6 inline" />
+        <h1 class="text-lg font-semibold dark:text-white">
+          <img src="/sensor.svg" alt="" class="w-6 inline filter dark:invert" />
           {{ notification.sensor_id }}
         </h1>
         <p class="font-thin text-sm dark:text-gray-400">{{ timestamp }}</p>
