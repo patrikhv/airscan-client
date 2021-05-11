@@ -1,11 +1,15 @@
 <template>
   <main v-if="sensor">
-    <div class="flex flex-col items-center min-h-screen bg-white">
+    <div
+      class="flex flex-col items-center min-h-screen bg-white dark:bg-dark-primary"
+    >
       <div
-        class="min-w-full px-3 pb-3 border-b pt-8 border-gray-200 bg-gray-100"
+        class="min-w-full px-3 pb-3 border-b pt-8 border-gray-200 dark:border-gray-500 bg-gray-100 dark:bg-dark-secondary"
       >
         <div class="flex flex-row justify-between items-center min-h-full">
-          <h1 class="">{{ sensor.sensor_name || sensor.sensor_id }}</h1>
+          <h1 class="dark:text-gray-100">
+            {{ sensor.sensor_name || sensor.sensor_id }}
+          </h1>
         </div>
       </div>
 

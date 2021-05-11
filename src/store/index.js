@@ -7,6 +7,7 @@ const store = createStore({
   state: {
     publicSensors: null,
     notifications: null,
+    darkMode: localStorage.getItem("dark_mode") === "true",
   },
   mutations: {
     setPublicSensors(state, data) {
@@ -15,6 +16,10 @@ const store = createStore({
     setNotifications(state, data) {
       state.notifications = data;
     },
+    changeDarkMode(state) {
+      localStorage.setItem("dark_mode", !state.darkMode);
+      state.darkMode = !state.darkMode;
+    },
   },
   getters: {
     getPublicSensors(state) {
@@ -22,6 +27,9 @@ const store = createStore({
     },
     getNotifications(state) {
       return state.notifications;
+    },
+    getDarkMode(state) {
+      return state.darkMode;
     },
   },
   actions: {

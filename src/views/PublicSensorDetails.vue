@@ -1,17 +1,18 @@
 <template>
   <main v-if="sensor != null">
-    <div class="flex flex-col items-center min-h-screen bg-white">
+    <div
+      class="flex flex-col items-center min-h-screen bg-white dark:bg-dark-primary"
+    >
       <div
-        class="min-w-full px-3 pb-3 border-b pt-8 border-gray-200 bg-gray-100"
+        class="min-w-full px-3 pb-3 border-b pt-8 border-gray-200 dark:border-gray-500 bg-gray-100 dark:bg-dark-secondary"
       >
         <div class="flex flex-row justify-between items-center min-h-full">
           <div>
-            <h1 class="">Public sensor details</h1>
+            <h1 class="dark:text-gray-100">Sensor details</h1>
             <h2 class="text-lg text-secondary">{{ sensor.sensor_name }}</h2>
           </div>
           <button
-            @click="follow"
-            class="px-2 py-1 rounded-lg border text-xs border-primary text-primary"
+            class="px-2 py-1 rounded-lg border text-xs border-primary text-primary active:bg-primary"
           >
             Follow
           </button>
@@ -25,10 +26,16 @@
           <div>:</div>
           <div class="pl-1">{{ sensor.sensor_id }}</div>
         </div>
-        <p class="text-gray-500">{{ sensor.sensor_description }}</p>
-        <h5 class="text-xl font-bold">Available data:</h5>
+        <p class="text-gray-500 dark:text-gray-200 mb-2">
+          {{ sensor.sensor_description }}
+        </p>
+        <h5 class="text-xl font-bold dark:text-gray-100">Available data:</h5>
         <ul class="pl-5 list-disc list-inside">
-          <li v-for="(type, i) in sensor.measurements" v-bind:key="i">
+          <li
+            class="dark:text-gray-300"
+            v-for="(type, i) in sensor.measurements"
+            v-bind:key="i"
+          >
             {{ type }}
           </li>
         </ul>

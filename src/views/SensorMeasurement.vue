@@ -1,17 +1,19 @@
 <template>
   <main>
-    <div class="flex flex-col items-center min-h-screen bg-white">
+    <div
+      class="flex flex-col items-center min-h-screen bg-white dark:bg-dark-primary"
+    >
       <div
-        class="min-w-full px-3 pb-3 border-b pt-8 border-gray-200 bg-gray-100"
+        class="min-w-full px-3 pb-3 border-b pt-8 border-gray-200 dark:border-gray-500 bg-gray-100 dark:bg-dark-secondary"
       >
         <div class="flex flex-row items-center min-h-full">
           <img
             src="/arrow_left.svg"
             alt="go back"
             @click="$router.go(-1)"
-            class="w-7 mr-2 cursor-pointer"
+            class="w-8 h-8 mr-2 cursor-pointer filter dark:invert"
           />
-          <h1 class="text-2xl">
+          <h1 class="text-2xl dark:text-gray-100">
             ID: {{ $route.params.id }} |
             {{ $route.query.measurement }}
           </h1>
@@ -31,7 +33,7 @@
           Last 30 days
         </button>
       </div>
-      <div v-if="!loading" class="w-full">
+      <div v-if="!loading" class="p-1 w-full dark:bg-dark-secondary rounded-xl">
         <Chart v-bind="{ ...lineChart }" ref="chartEl" />
       </div>
       <div v-if="loading" class="text-xl">Loading chart...</div>
@@ -92,8 +94,10 @@ export default {
           datasets: [
             {
               data: [],
-              borderWidth: 3,
+              borderWidth: 2,
               borderColor: "#2ECC71",
+              backgroundColor: "rgba(46, 204, 113, .2)",
+              fill: true,
             },
           ],
         },
@@ -105,6 +109,6 @@ export default {
 
 <style scoped>
 button {
-  @apply rounded p-2;
+  @apply rounded p-2 m-1;
 }
 </style>

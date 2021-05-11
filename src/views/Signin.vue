@@ -2,9 +2,11 @@
   <main>
     <div class="flex flex-col items-center pt-14 min-h-screen">
       <img src="logo.svg" alt="Logo" class="w-36" />
-      <h1>airscan</h1>
-      <h2 class="font-semibold text-gray-600">Air quality control</h2>
-      <p class="font-light mt-5 text-center text-gray-600">
+      <h1 class="dark:text-secondary tracking-wide">airscan</h1>
+      <h2 class="font-semibold text-gray-600 dark:text-gray-200 tracking-wide">
+        Air quality control
+      </h2>
+      <p class="font-light mt-5 text-center text-gray-600 dark:text-gray-300">
         Welcome back,<br />
         sign in to continue
       </p>

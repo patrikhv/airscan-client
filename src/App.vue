@@ -1,14 +1,16 @@
 <template>
-  <router-view v-slot="{ Component }">
-    <transition name="fade">
-      <component :is="Component" />
-    </transition>
-  </router-view>
-  <Navbar v-if="showNavbar" />
+  <div v-bind:class="{ dark: darkMode, 'bg-dark-primary': darkMode }">
+    <router-view v-slot="{ Component }">
+      <transition name="fade">
+        <component :is="Component" />
+      </transition>
+    </router-view>
+    <Navbar v-if="showNavbar" />
+  </div>
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 
 import Navbar from "./components/Navbar";
 
@@ -25,14 +27,18 @@ export default {
   components: { Navbar },
   methods: {
     ...mapActions(["updatePublicSensors"]),
+    ...mapGetters(["getDarkMode"]),
   },
   data: function () {
     return {
       showNavbar: false,
+      darkMode: this.getDarkMode(),
     };
   },
   created() {
     this.updatePublicSensors();
+    console.log(localStorage.getItem("dark_mode"));
+    console.log(localStorage.getItem("dark_mode") == true);
   },
   watch: {
     $route(to) {
@@ -43,6 +49,10 @@ export default {
       navbarAllowedPaths.includes(route)
         ? (this.showNavbar = true)
         : (this.showNavbar = false);
+    },
+    "$store.state.darkMode"(to, from) {
+      this.darkMode = to;
+      console.log({ to, from });
     },
   },
 };

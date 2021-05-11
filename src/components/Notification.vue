@@ -1,23 +1,23 @@
 <template>
   <div
-    class="cursor-pointer w-full flex items-center p-2 border-b border-gray-300 border-opacity-30 bg-white"
+    class="cursor-pointer w-full flex items-center p-2 border-b border-gray-300 border-opacity-30 bg-white dark:bg-dark-primary"
   >
     <div :class="priorityClass + ` priority`"></div>
-    <div class="w-9/12">
-      <h1 class="text-lg font-semibold">
-        <img src="/sensor.svg" alt="" class="w-6 inline" />
-        {{ notification.sensor_id }}
-      </h1>
-      <div class="flex justify-between">
-        <p
-          class="text-sm font-light whitespace-nowrap overflow-ellipsis overflow-hidden text-gray-600"
-        >
-          {{ notification.measurement }}:
-          <span class="font-semibold">{{ notification.value }}</span>
-        </p>
-        <p class="font-thin text-sm">{{ timestamp }}</p>
+    <div class="flex-grow">
+      <div class="flex justify-between items-center">
+        <h1 class="text-lg font-semibold">
+          <img src="/sensor.svg" alt="" class="w-6 inline" />
+          {{ notification.sensor_id }}
+        </h1>
+        <p class="font-thin text-sm dark:text-gray-400">{{ timestamp }}</p>
       </div>
-      <p class="text-sm">
+      <p
+        class="text-sm font-light whitespace-nowrap overflow-ellipsis overflow-hidden text-gray-600 dark:text-gray-200"
+      >
+        {{ notification.measurement }}:
+        <span class="font-semibold">{{ notification.value }}</span>
+      </p>
+      <p class="text-sm dark:text-gray-400">
         {{ notification.description }}
       </p>
     </div>
