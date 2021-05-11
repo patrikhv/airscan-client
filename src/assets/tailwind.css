@@ -9,6 +9,15 @@ body {
   @apply min-h-screen bg-gray-100;
 }
 
+body {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
 input:focus,
 textarea:focus,
 select:focus,
@@ -21,7 +30,7 @@ button:active {
 
 .fade-enter-active,
 .fade-leave-active {
-  @apply transition-opacity;
+  @apply transition-opacity duration-300;
 }
 
 .fade-enter-from,

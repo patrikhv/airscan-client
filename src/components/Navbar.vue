@@ -1,6 +1,6 @@
 <template>
   <div
-    class="fixed bottom-0 w-screen h-16 flex justify-around items-center text-xs bg-gray-100 dark:bg-dark-secondary text-gray-800 dark:text-gray-50"
+    class="fixed bottom-0 container h-16 flex justify-around items-center text-xs bg-gray-100 dark:bg-dark-secondary text-gray-800 dark:text-gray-50"
   >
     <router-link to="/">
       <img src="/sensor.svg" alt="sensor" class="icon" />

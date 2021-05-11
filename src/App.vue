@@ -1,11 +1,13 @@
 <template>
-  <div v-bind:class="{ dark: darkMode, 'bg-dark-primary': darkMode }">
-    <router-view v-slot="{ Component }">
-      <transition name="fade">
-        <component :is="Component" />
-      </transition>
-    </router-view>
-    <Navbar v-if="showNavbar" />
+  <div v-bind:class="{ dark: darkMode, 'bg-dark-light': darkMode }">
+    <div class="container mx-auto shadow dark:bg-dark-primary">
+      <router-view v-slot="{ Component }">
+        <transition name="fade">
+          <component :is="Component" />
+        </transition>
+      </router-view>
+      <Navbar v-if="showNavbar" />
+    </div>
   </div>
 </template>
 
